@@ -1,0 +1,42 @@
+<header class="header">
+    <h1>Angular list of prohibited words</h1>
+</header>
+<main class="main">
+    <section class="section">
+        <form class="censor">
+            <p>
+                <span class="censor__bad">Bad words: </span>
+                <span class="censor__list">{{ showBadList() }}</span>
+            </p>
+            <div class="censor__row">
+                <input type="text" 
+                    class="censor__text censor__text-set" 
+                    [class.wrong]="isEmpty1" 
+                    [attr.placeholder]="placeholderInput" 
+                    autocomplete="off"
+                    [(ngModel)]="setBadWord" name="setBadWord">
+                <button type="button" 
+                    class="censor__btn censor__btn-add" 
+                    (click)="addToBadList()">
+                    Add
+                </button>
+                <button type="button" 
+                    class="censor__btn censor__btn-reset" 
+                    (click)="resetBadList()">
+                    Reset
+                </button>
+            </div>
+            <textarea 
+                class="censor__text censor__text-area" 
+                [class.wrong]="isEmpty2"
+                [attr.placeholder]="placeholderArea" 
+                [(ngModel)]="textField" name="textField"></textarea>
+            <button type="button" 
+                class="censor__btn censor__btn-check" 
+                (click)="checkTextField()">
+                Censor
+            </button>
+        </form>
+    </section>
+</main>
+<footer class="footer"></footer>

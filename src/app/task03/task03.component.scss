@@ -1,0 +1,94 @@
+$backgrounb_main: #F6F6F6;
+$table_hover: #DEDEDE;
+$border_color: #E4E4E4;
+$text_dark: #343a40;
+$text_light: #ffffff;
+$text_input: #494949;
+$blue: #97BDE4;
+$green: #28a745;
+$green_hover: #218838;
+
+$blue_focus: rgba(38, 143, 255, 0.3);
+$green_focus: rgba(72, 180, 97, 0.5);
+
+.main {
+    width: 100vw;
+    min-height: 100vh;
+    padding: 0 60px;
+    background-color: $backgrounb_main;
+    font-family: 'Roboto', sans-serif;
+    color: $text_dark;
+}
+
+.planner {
+    max-width: 1110px;
+    margin: 0 auto;
+    &__header {
+        height: 95px;
+        border-bottom: 1px solid $border_color;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    &__h1 {
+        font-size: 2em;
+    }
+    &__h2 {
+        font-size: 1.6em;
+    }
+    &__new {
+        height: 70px;
+        border-bottom: 1px solid $border_color;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    &__input {
+        width: 100%;
+        height: 40px;
+        padding: 0 14px;
+        border: 1px solid $border_color;
+        border-radius: 4px;
+        outline: none;
+        color: $text_input;
+        &-update {
+            width: 300px;
+            height: 30px;
+        }
+        &:focus {
+            border-color: $blue;
+            box-shadow: 0 0 0 3px $blue_focus;
+        }
+    }
+    &__btn {
+        height: 40px;
+        border: none;
+        border-radius: 4px;
+        outline: none;
+        cursor: pointer;
+        color: $text_light;
+        background-color: $green;
+        &-add {
+            width: 175px;
+        }
+        &-update {
+            padding: 0 15px;
+        }
+        &:hover {
+            background-color: $green_hover;
+        }
+        &:focus {
+            box-shadow: 0 0 0 3px $green_focus;
+        }
+    }
+    &__edit {
+        max-width: 1000px;
+        height: 60px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        &:hover {
+            background-color: $table_hover;
+        }
+    }
+}

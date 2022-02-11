@@ -1,0 +1,40 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Task</th>
+            <th>Check</th>
+            <th>DONE/IN PROGRESS</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let task of taskArray; index as i">
+            <td>{{ i + 1 }}</td>
+            <td>{{ task.name }}</td>
+            <td>
+                <input type="checkbox" 
+                    [checked]="task.status"
+                    (click)="changeStatus(i)">
+            </td>
+            <td 
+                [style.color]="task.status ? '#28a745' : '#dc3545'">
+                {{ task.status ? 'Done' : 'In PROGRESS' }}
+            </td>
+            <td>
+                <button class="table__btn-edit"
+                    (click)="editTask(i)">
+                    Edit
+                </button>
+            </td>
+            <td>
+                <button class="table__btn-delete"
+                    (click)="deleteTask(i)" 
+                    [disabled]="!task.status">
+                    Delete
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

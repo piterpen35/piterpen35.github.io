@@ -1,0 +1,64 @@
+$table_hover: #DEDEDE;
+$border_color: #E4E4E4;
+$text_dark: #343a40;
+$text_light: #ffffff;
+$yellow: #ffc107;
+$yellow_hover: #e0a800;
+$red: #dc3545;
+$red_hover: #c82333;
+$red_disabled: #D67B83;
+$yellow_focus: rgba(222, 170, 12, 0.5);
+$red_focus: rgba(225, 83, 97, 0.5);
+
+.table {
+    width: 100%;
+    th {
+        height: 50px;
+        padding-left: 10px;
+        border-bottom: 1px solid $border_color;
+        text-align: left;
+    }
+    td {
+        height: 60px;
+        padding-left: 10px;
+        border-bottom: 1px solid $border_color;
+    }
+    tr:hover td {
+        background-color: $table_hover;
+    }
+    &__btn-edit {
+        height: 40px;
+        padding: 0 15px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        background-color: $yellow;
+            &:hover {
+                background-color: $yellow_hover;
+                color: $text_dark;
+            }
+            &:focus {
+                box-shadow: 0 0 0 3px $yellow_focus;
+            }
+    }
+    &__btn-delete {
+        height: 40px;
+        padding: 0 15px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        background-color: $red;
+            color: $text_light;
+            &:hover {
+                background-color: $red_hover;
+            }
+            &:focus {
+                box-shadow: 0 0 0 3px $red_focus;
+            }
+            &:disabled {
+                background-color: $red_disabled;
+            }
+    }
+}

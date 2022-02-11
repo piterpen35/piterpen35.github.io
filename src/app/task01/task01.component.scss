@@ -1,0 +1,149 @@
+$background_header: #F6F6F6;
+$backgrounb_main: #d0dbe9;
+$border_color: #ced4da;
+$text_dark: #343a40;
+$text_light: #ffffff;
+$text_placeholder: #777777;
+$text_input: #494949;
+$blue: #97BDE4;
+$yellow: #ffc107;
+$yellow_hover: #e0a800;
+$red: #dc3545;
+$red_hover: #c82333;
+$green: #28a745;
+$green_hover: #218838;
+
+$blue_focus: rgba(38, 143, 255, 0.3);
+$yellow_focus: rgba(222, 170, 12, 0.5);
+$red_focus: rgba(225, 83, 97, 0.5);
+$green_focus: rgba(72, 180, 97, 0.5);
+
+.header {
+    width: 100%;
+    height: 80px;
+    background-color: $background_header;
+    border-top: 1px solid $border_color;
+    border-bottom: 1px solid $border_color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    color: $text_dark;
+}
+
+.main {
+    width: 100%;
+    height: calc(100vh - (80px + 40px));
+    background-color: $backgrounb_main;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    color: $text_dark;
+}
+
+.footer {
+    width: 100%;
+    height: 40px;
+    background-color: $background_header;
+}
+
+.section {
+    padding-top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.censor {
+    width: 740px;
+    background-color: $background_header;
+    border-radius: 5px;
+    padding: 13px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+    &__bad {
+        font-weight: bold;
+        font-size: 22px;
+        color: $text_dark;
+    }
+    &__list {
+        font-weight: bold;
+        font-size: 22px;
+        color: $red;
+    }
+    &__row {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__text {
+        padding: 14px;
+        border: 1px solid $border_color;
+        border-radius: 4px;
+        font-size: 18px;
+        color: $text_input;
+        outline: none;
+        &::placeholder {
+            color: $text_placeholder;
+        }
+        &:focus {
+            border-color: $blue;
+            box-shadow: 0 0 0 4px $blue_focus;
+        }
+        &-set {
+            width: 470px;
+            height: 46px;
+        }
+        &-area {
+            width: 100%;
+            height: 100px;
+            padding-top: 12px;
+            resize: none
+        }
+    }
+    &__btn {
+        width: 110px;
+        height: 46px;
+        border: none;
+        border-radius: 4px;
+        color: $text_light;
+        font-size: 18px;
+        cursor: pointer;
+        outline: none;
+        &-add {
+            background-color: $yellow;
+            color: $text_dark;
+            &:hover {
+                background-color: $yellow_hover;
+            }
+            &:focus {
+                box-shadow: 0 0 0 4px $yellow_focus;
+            }
+        }
+        &-reset {
+            background-color: $red;
+            &:hover {
+                background-color: $red_hover;
+            }
+            &:focus {
+                box-shadow: 0 0 0 4px $red_focus;
+            }
+        }
+        &-check {
+            width: 100%;
+            background-color: $green;
+            &:hover {
+                background-color: $green_hover;
+            }
+            &:focus {
+                box-shadow: 0 0 0 4px $green_focus;
+            }
+        }
+    }
+}
+
+.wrong {
+    border-color: $red;
+    &:focus {
+        border-color: $red;
+    }
+}

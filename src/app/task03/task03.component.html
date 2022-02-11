@@ -1,0 +1,37 @@
+<main class="main">
+    <section class="planner">
+        <div class="planner__header">
+            <h1 class="planner__h1">Plan your day!</h1>
+            <h2 class="planner__h2">User: {{ userName }}. Count of task {{ taskCount }}</h2>
+        </div>
+        <div class="planner__new">
+            <input type="text" 
+                class="planner__input"
+                [(ngModel)]="taskName">
+            <button 
+                class="planner__btn planner__btn-add" 
+                (click)="addTask()">
+                Add
+            </button>
+        </div>
+        <div class="planner__data">
+            <app-table 
+                [newTask]="sendName" 
+                (sendCountOfTasks)="getCount($event)" 
+                (sendEdit)="getIndex($event)">
+            </app-table>
+        </div>
+        <div 
+            class="planner__edit" 
+            *ngIf="isEdit">
+            <input type="text" 
+                class="planner__input planner__input-update"
+                [(ngModel)]="newTaskName">
+            <button 
+                class="planner__btn planner__btn-update" 
+                (click)="updateTask()">
+                save
+            </button>
+        </div>
+    </section>
+</main>
